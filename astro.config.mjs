@@ -3,6 +3,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://codingdungeon.github.io",
-    base: "/coding_dungeon/",
+    site: "https://codingdungeon.com",
 });
