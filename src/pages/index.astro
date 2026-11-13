@@ -1,25 +1,30 @@
 ---
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/pixelify-sans/500.css';
+
+const base = import.meta.env.BASE_URL;
+const archwayUrl = `${base}artwork/under-construction/neon_green_dungeon_archway.png`;
+const wizardUrl = `${base}artwork/under-construction/pixel_wizard_coding_in_binary_rain.gif`;
+const wordmarkUrl = `${base}brand/coding_dungeon_letters.png`;
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<link rel="icon" href={`${base}favicon.ico`} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="Coding Dungeon is preparing something new." />
 		<meta name="generator" content={Astro.generator} />
 		<title>CODING_DUNGEON | Under Construction</title>
 	</head>
 	<body>
-		<main class="construction-page">
+		<main class="construction-page" style={`--archway-url: url("${archwayUrl}")`}>
 			<section class="construction-content" aria-labelledby="page-title">
 				<h1 id="page-title" class="sr-only">Coding Dungeon</h1>
 				<img
 					class="wizard"
-					src="/artwork/under-construction/pixel_wizard_coding_in_binary_rain.gif"
+					src={wizardUrl}
 					width="362"
 					height="362"
 					fetchpriority="high"
@@ -27,7 +32,7 @@ import '@fontsource/pixelify-sans/500.css';
 				/>
 				<img
 					class="wordmark"
-					src="/brand/coding_dungeon_letters.png"
+					src={wordmarkUrl}
 					width="2172"
 					height="724"
 					decoding="async"
@@ -65,7 +70,7 @@ import '@fontsource/pixelify-sans/500.css';
 		place-items: center;
 		overflow: hidden;
 		background-color: #020301;
-		background-image: url('/artwork/under-construction/neon_green_dungeon_archway.png');
+		background-image: var(--archway-url);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
